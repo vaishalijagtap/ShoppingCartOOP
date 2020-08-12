@@ -21,21 +21,21 @@ $customerInfo = array (
 								'zip' => '32837',
 							),
 					);
-require('customer.php');
+require('classes/customer.php');
 // Create Customer
 $customer = new Customer($customerInfo);
 
-require('cart.php');
+require('classes/cart.php');
 // Create cart
 $cart = new Cart($customer);
 
-require('shipping.php');
+require('classes/shipping.php');
 // Create Shipping
 $ship = new Shipping('Ship from address', 'Ship to address');
 $shippingCost = $ship->calculateShipping();
 
 // Create some items
-require('Item.php');
+require('classes/item.php');
 $item1 = new Item('IT001', 'Item -- 001', 2, 50.45);
 $item2 = new Item('IT002', 'Item -- 002', 1, 76.39);
 $item3 = new Item('IT003', 'Item -- 003', 4, 43.00);
